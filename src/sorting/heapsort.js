@@ -18,24 +18,30 @@
      * @param {function} cmp Comparison function.
      */
     function heapify(array, index, heapSize, cmp) {
+      //console.log("Begin heapify: array=" + array + " index=" + index
+        //+ " heapSize=" + heapSize + " cmp=" + cmp);
+      
       var left = 2 * index + 1;
       var right = 2 * index + 2;
       var largest = index;
 
+      //console.log("left=" + left + " right=" + right + " largest=" + largest);
+
       if (left < heapSize && cmp(array[left], array[index]) > 0) {
         largest = left;
       }
-
+      //console.log("largest=" + largest);
       if (right < heapSize && cmp(array[right], array[largest]) > 0) {
         largest = right;
       }
-
+      //console.log("largest=" + largest);
       if (largest !== index) {
         var temp = array[index];
         array[index] = array[largest];
         array[largest] = temp;
         heapify(array, largest, heapSize, cmp);
       }
+      console.log(array);
     }
 
     /**
