@@ -88,6 +88,7 @@
         array[0] = array[i];
         array[i] = temp;
         size -= 1;
+        console.log(array);
         heapify(array, 0, size, cmp);
       }
       return array;
